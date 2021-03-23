@@ -7,7 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 <meta charset="ISO-8859-1">
-<title>Connexion</title>
+<title>Inscription</title>
 </head>
 <body>
 <div class="container">
@@ -17,6 +17,11 @@
     <div class="col-sm">
 <form method="post" action="exemple">
   <div class="mb-3">
+    <label for="email"  class="form-label">Nom complet </label>
+    <input type="text" pattern="[A-Za-z ]{5,60}" required class="form-control" name="nom"  >
+
+  </div>
+    <div class="mb-3">
     <label for="email"  class="form-label">Email </label>
     <input type="email" required class="form-control" name="email"  >
 
@@ -27,7 +32,7 @@
   </div>
   
   <button type="submit" class="btn btn-primary">Se connecter</button>
-  <a href="inscription.jsp">Devenir membre?</a>
+  <a href="index.jsp">Déjà membre?</a>
 </form>
 <!-- formulaire -->
     </div>
