@@ -15,7 +15,7 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-<form method="post" action="exemple">
+<form method="post" action="Inscriptionservlet">
   <div class="mb-3">
     <label for="email"  class="form-label">Nom complet </label>
     <input type="text" pattern="[A-Za-z ]{5,60}" required class="form-control" name="nom"  >

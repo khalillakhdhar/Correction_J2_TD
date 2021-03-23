@@ -43,7 +43,7 @@ public class ConnexionServlet extends HttpServlet {
 		String pass=request.getParameter("mdp");
 		HttpSession session= request.getSession();
 		User us=(User)session.getAttribute("currentuser");
-		if((us.getEmail().equals(email))&&(us.getPass().equals("pass")))
+		if((us.getEmail().equals(email))&&(us.getPass().equals("mdp")))
 				{
 			response.sendRedirect("profile.jsp");
 			

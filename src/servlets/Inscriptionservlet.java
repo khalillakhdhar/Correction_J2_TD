@@ -45,6 +45,7 @@ public class Inscriptionservlet extends HttpServlet {
 		User us=new User(nom,email,pass);
 		HttpSession session=request.getSession();
 		session.setAttribute("currentuser", us);
+		response.sendRedirect("index.jsp");
 		
 		
 		

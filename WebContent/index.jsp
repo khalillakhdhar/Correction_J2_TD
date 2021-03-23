@@ -15,7 +15,7 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-<form method="post" action="exemple">
+<form method="post" action="ConnexionServlet">
   <div class="mb-3">
     <label for="email"  class="form-label">Email </label>
     <input type="email" required class="form-control" name="email"  >
@@ -26,8 +26,20 @@
     <input type="password" required name="mdp" class="form-control" id="pass">
   </div>
   
-  <button type="submit" class="btn btn-primary">Se connecter</button>
-  <a href="inscription.jsp">Devenir membre?</a>
+  <button type="submit" class="btn btn-primary">Se connecter</button><br>
+  <a href="inscription.jsp">Devenir membre?</a><br>
+  <%
+  if(request.getAttribute("erreur")!=null)
+  {
+	//  out.println(request.getAttribute("erreur"));
+	  
+	  
+ 
+  
+  
+  %>
+  <p><h3><%=request.getAttribute("erreur") %></h3></p>
+  <% } %>
 </form>
 <!-- formulaire -->
     </div>
