@@ -1,0 +1,62 @@
+package servlets;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import classes.User;
+/**
+ * Servlet implementation class ConnexionServlet
+ */
+@WebServlet("/ConnexionServlet")
+public class ConnexionServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ConnexionServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+		String email=request.getParameter("email");
+		String pass=request.getParameter("mdp");
+		HttpSession session= request.getSession();
+		User us=(User)session.getAttribute("currentuser");
+		if((us.getEmail().equals(email))&&(us.getPass().equals("pass")))
+				{
+			response.sendRedirect("profile.jsp");
+			
+			
+				}
+		else
+		{
+			String message="compte non reconnu!";
+			request.setAttribute("erreur",message);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+			
+		}
+		
+	}
+
+}
